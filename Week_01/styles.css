@@ -18,6 +18,12 @@ a {
   text-decoration: none;
 }
 
+.a129 {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+}
+
 .sky {
   position: absolute;
   top: -2%;
