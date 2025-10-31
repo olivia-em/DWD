@@ -62,6 +62,6 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, () => {
   console.log(
-    `Server running at http://0.0.0.0:${port}/ (serving ${process.cwd()})`
+    `Server running at http://143.198.29.234/:${port}/ (serving ${process.cwd()})`
   );
 });
