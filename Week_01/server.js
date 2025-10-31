@@ -55,7 +55,17 @@ const server = http.createServer((req, res) => {
       res.writeHead(404);
       return res.end("Not found");
     }
-    res.writeHead(200, { "Content-Type": getMimeType(safePath) });
+    // include charset for text-based mime types so the browser decodes files as UTF-8
+    let mime = getMimeType(safePath);
+    if (
+      mime.startsWith("text/") ||
+      mime === "application/javascript" ||
+      mime === "application/json" ||
+      mime.endsWith("+xml")
+    ) {
+      mime += "; charset=utf-8";
+    }
+    res.writeHead(200, { "Content-Type": mime });
     res.end(data);
   });
 });
