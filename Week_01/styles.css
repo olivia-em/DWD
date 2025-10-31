@@ -70,7 +70,7 @@ a {
   .star {
     gap: 4px;
   }
-  .star .label {
+  .star {
     font-size: 12px;
   }
 }
