@@ -1,0 +1,67 @@
+/* Week_02 basic stylesheet
+	 - Font: Courier New (fallbacks to Courier, monospace)
+	 - Background: cream
+	 - Text: black
+*/
+
+:root {
+  --bg-cream: #fff7e6; /* light cream */
+  --text-black: #000000;
+  --accent: #111111;
+  --max-width: 1100px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--bg-cream);
+  color: var(--text-black);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-black);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+code,
+pre {
+  font-family: inherit;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* small responsive tweaks */
+@media (max-width: 420px) {
+  body {
+    padding: 14px;
+  }
+}
