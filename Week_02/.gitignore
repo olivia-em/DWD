@@ -1,0 +1,7 @@
+node_modules/
+public/uploads/*.jpg
+public/uploads/*.jpeg
+public/uploads/*.png
+public/uploads/*.gif
+public/uploads/*.webp
+.DS_Store
