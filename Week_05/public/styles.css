@@ -1,0 +1,217 @@
+/* Week_05 SPA aligned to Week_02 style
+	 - Font: Courier New (fallbacks to Courier, monospace)
+	 - Background: cream
+	 - Text: black
+*/
+
+:root {
+  --bg-cream: #fff7e6;
+  --text-black: #222;
+  --accent: #111;
+  --max-width: 70vw;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg-cream);
+  display: flex;
+  color: var(--text-black);
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 40px auto;
+  /* background: #fff; */
+  padding: 32px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+}
+
+h1 {
+  color: var(--text-black);
+  font-family: inherit;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+h2,
+h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-black);
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+code,
+pre {
+  font-family: inherit;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 2px 6px;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+form {
+  margin-bottom: 32px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 12px;
+}
+
+input,
+select,
+button {
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input[type="file"] {
+  padding: 0;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  margin-top: 12px;
+}
+
+#poem-section {
+  /* margin-top: 32px; */
+}
+
+.back-link {
+  display: block;
+  margin: 24px auto 0 auto;
+  text-align: center;
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Poem display styles */
+.poem-container {
+  margin: 40px auto;
+  max-width: 600px;
+}
+.poem {
+  line-height: 1.2;
+  width: 50vw;
+  margin-bottom: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  height: auto;
+  position: relative;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+}
+.poem-text {
+  white-space: pre-line;
+  position: static;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  mix-blend-mode: difference;
+}
+.poem-text p {
+  padding: 8px 12px;
+  display: inline-block;
+  margin: 8px 0;
+  line-height: 1.2;
+  /* background-color: #222;
+  color: #fff7e6; */
+  /* background-color: #fff7e6; */
+  color: white;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.poem em {
+  font-style: italic;
+}
+.poem .secret-text {
+  font-style: italic;
+  margin: 20px 0;
+  /* background-color: #222;
+  color: #fff7e6; */
+  background-color: #fff7e6;
+  color: #222;
+  padding: 10px 16px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+.poem-text-overlay {
+  position: absolute;
+  transform: scaleX(-1);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* mix-blend-mode: difference; */
+  pointer-events: none;
+}
+.poem-text-overlay p {
+  padding: 8px 12px;
+  display: inline-block;
+  margin: 8px 0;
+  line-height: 1.2;
+  background-color: black;
+  color: cyan;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.poem-text-overlay .secret-text {
+  font-style: italic;
+  margin: 20px 0;
+  /* background-color: #fff7e6;
+  color: #222; */
+  background-color: black;
+  color: cyan;
+  padding: 10px 16px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* small responsive tweaks */
+@media (max-width: 420px) {
+  main {
+    padding: 12px;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+}
