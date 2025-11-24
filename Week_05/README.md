@@ -36,7 +36,7 @@ ssh root@143.198.29.234
 ### 3️⃣ Pull the latest changes
 
 ```bash
-cd ~/DWD/Week_02
+cd ~/DWD/Week_05
 git pull
 ```
 
@@ -56,7 +56,7 @@ mkdir -p public/uploads
 
 ```bash
 # If you changed server.js, restart pm2
-pm2 restart Week_02
+pm2 restart Week_05
 
 # Or if this is the first time, start it:
 # pm2 start server.js --name week02

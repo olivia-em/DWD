@@ -4,4 +4,5 @@ public/uploads/*.jpeg
 public/uploads/*.png
 public/uploads/*.gif
 public/uploads/*.webp
+currentSecret.json
 .DS_Store

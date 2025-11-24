@@ -1,15 +1,3 @@
-# Week 02 - Secret Sharing App
-
-A photo + secret sharing web app with poem display using Express and Multer.
-
-## Features
-
-- Submit a secret with "with/for/from" preposition
-- Upload a photo (optional)
-- Photo displays as background with text overlay and blend modes
-- Only the most recent secret is shown
-- Old photos are automatically deleted when new ones are uploaded
-
 ## Local Development
 
 ### Install dependencies
@@ -35,7 +23,7 @@ Then visit: `http://localhost:8080`
 ```bash
 # From your local Week_02 folder
 git add .
-git commit -m "Update Week_02 with photo upload and poem styling"
+git commit -m "update"
 git push origin main
 ```
 
@@ -68,7 +56,7 @@ mkdir -p public/uploads
 
 ```bash
 # If you changed server.js, restart pm2
-pm2 restart week02
+pm2 restart Week_02
 
 # Or if this is the first time, start it:
 # pm2 start server.js --name week02

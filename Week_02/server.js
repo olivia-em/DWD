@@ -39,7 +39,20 @@ const upload = multer({
   },
 });
 
+// Path to store current secret data
+const secretDataPath = path.join(__dirname, "currentSecret.json");
+
+// Load current secret from file if it exists
 let currentSecret = null;
+try {
+  if (fs.existsSync(secretDataPath)) {
+    const data = fs.readFileSync(secretDataPath, "utf8");
+    currentSecret = JSON.parse(data);
+    console.log("Loaded existing secret from file");
+  }
+} catch (err) {
+  console.log("No existing secret found or error loading:", err.message);
+}
 
 // get request handler
 
@@ -73,6 +86,9 @@ function myShareRequestHandler(req, res) {
 
   // Replace the current secret with the new one
   currentSecret = { preposition, secret, photoPath };
+
+  // Save to file so it persists across server restarts
+  fs.writeFileSync(secretDataPath, JSON.stringify(currentSecret, null, 2));
 
   console.log("Share request received");
   res.redirect("/secrets");
