@@ -24,9 +24,3 @@ npm run dev
 
 - `client/` — React + Vite frontend
 - `server/` — Node.js + Express backend
-
-## Next Steps
-
-- Add generic poetry piece components
-- Implement search and z-axis scroll features
-- Connect frontend and backend for semantic search

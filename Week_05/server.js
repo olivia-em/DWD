@@ -82,7 +82,11 @@ function myShareRequestHandler(req, res) {
 
   // Move current to previous (but only keep secret and preposition)
   secrets.previous = secrets.current
-    ? { secret: secrets.current.secret, preposition: secrets.current.preposition, photoPath: secrets.current.photoPath }
+    ? {
+        secret: secrets.current.secret,
+        preposition: secrets.current.preposition,
+        photoPath: secrets.current.photoPath,
+      }
     : null;
 
   let secret = req.body.secret;
@@ -135,7 +139,9 @@ function mySecretsRequestHandler(req, res) {
             <p>You can take it, this thing I've shared…<br/>
             that, the love, and the care.</p>
           </div>
-          ${secrets.previous ? `
+          ${
+            secrets.previous
+              ? `
           <div class="poem-text poem-text-overlay">
             <p>We've kept a secret <em>${secrets.previous.preposition}</em> each other</p>
             <p>You've kept a secret <em>${secrets.previous.preposition}</em> me<br/>
@@ -149,7 +155,9 @@ function mySecretsRequestHandler(req, res) {
             <p>You can take it, this thing I've shared…<br/>
             that, the love, and the care.</p>
           </div>
-          ` : ""}
+          `
+              : ""
+          }
         </div>
     `;
   } else {

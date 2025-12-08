@@ -2,16 +2,19 @@
 
 .piece3Container {
   padding: 40px;
-  margin: 0 auto;
+  margin: 0 0;
+  width: 90%;
 }
 
 .piece3Form {
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
+  display: flex;
+  flex-direction: column;
 }
 
 .piece3Label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .piece3Select {
@@ -19,17 +22,32 @@
 }
 
 .piece3Input {
-  width: 100%;
+  width: 50%;
   padding: 8px;
   font-size: 1rem;
   margin-bottom: 8px;
+  align-self: center;
 }
 
 .piece3File {
   margin-bottom: 8px;
+  margin-left: 10%;
+  align-self: center;
+  text-align: center;
 }
 
 .piece3Button {
+  padding: 8px 16px;
+  width: 15%;
+  align-self: flex-end;
+  border: none;
+}
+
+.piece3Button:hover {
+  background-color: rgba(150, 0, 0, 0.5);
+  color: white;
+  transition: 0.3s ease;
+  border: none;
   padding: 8px 16px;
 }
 

@@ -16,6 +16,7 @@
   height: 100%;
   perspective: 1000px;
   perspective-origin: 50% 50%;
+  mix-blend-mode: screen;
 }
 
 .preserve3dWrap {
@@ -23,6 +24,7 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
 }
 .container {
   /* background-color: rgb(26, 26, 46); */

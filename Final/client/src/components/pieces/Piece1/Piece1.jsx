@@ -1,19 +1,43 @@
 import React from "react";
+import styles from "./Piece1.module.css";
 
 const Piece1 = () => (
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100vh",
-    }}
-  >
-    <p style={{ fontSize: "1.5rem", textAlign: "center", maxWidth: 600 }}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl aliquam enim, eget facilisis enim nisl
-      nec elit. Pellentesque habitant morbi tristique senectus et netus et
-      malesuada fames ac turpis egestas.
+  <div className={styles.piece1Container}>
+    <p className={styles.poemText}>
+      <span className={styles.h2Title}>
+        <i>justBones</i>
+      </span>
+      <br />
+      pretty please, just let me rot
+      <br />
+      until I go unknown
+      <br />
+      ugly breed, so fallen off <br />
+      what am I when I’m alone?
+      <br />
+      <br />
+      peel off my skin
+      <br />
+      and take my eyes;
+      <br />
+      replace them with
+      <br />
+      unseeing stones.
+      <br />
+      <br />
+      slice me open
+      <br />
+      and feed the flies;
+      <br />
+      they’ll strip me down
+      <br />
+      til' i'm just bones
+      <br />
+      <br />
+      and then from there,
+      <br />
+      we’ll go…
+      <br />
     </p>
   </div>
 );

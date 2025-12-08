@@ -4,21 +4,10 @@ import styles from "./CSSScroll.module.css";
 import Piece1 from "./components/pieces/Piece1/Piece1";
 import Piece2 from "./components/pieces/Piece2/Piece2";
 import Piece3 from "./components/pieces/Piece3/Piece3";
+import Piece4 from "./components/pieces/Piece4/Piece4P5";
+import Piece5 from "./components/pieces/Piece5/Piece5";
 
-const pieces = [
-  {
-    id: 1,
-    content: <Piece1 />,
-  },
-  {
-    id: 2,
-    content: <Piece2 />,
-  },
-  {
-    id: 3,
-    content: <Piece3 />,
-  },
-];
+// We'll pass orbitEnabled to Piece5 below
 
 function Piece({ z, cameraZ, children }) {
   const distance = z - cameraZ;
@@ -47,8 +36,8 @@ function Piece({ z, cameraZ, children }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "rgba(255, 255, 255, 0.95)",
-        color: "#000",
+        background: "#000",
+        color: "rgba(255, 255, 255, 0.95)",
         borderRadius: "0px",
         boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
         opacity: opacity,
@@ -64,8 +53,17 @@ export default function ThreeScroll() {
   const [cameraZ, setCameraZ] = useState(-200);
   const scrollRef = useRef(-200);
   const spacing = 1000;
-  const minZ = -(pieces.length - 1) * spacing - 700;
+  const numPieces = 5;
+  const minZ = -(numPieces - 1) * spacing - 700;
   const maxZ = -200;
+
+  // Piece5 is fully in view when cameraZ is at its position
+  const piece5Z = -200 - (numPieces - 1) * spacing;
+  const [isPiece5Active, setIsPiece5Active] = useState(false);
+
+  useEffect(() => {
+    setIsPiece5Active(cameraZ <= piece5Z + 50); // 50px threshold for full view
+  }, [cameraZ, piece5Z]);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -112,11 +110,21 @@ export default function ThreeScroll() {
           className={styles.preserve3dWrap}
           style={{ transform: `translateZ(${-cameraZ}px)` }}
         >
-          {pieces.map((piece, i) => (
-            <Piece key={piece.id} z={-200 - i * spacing} cameraZ={cameraZ}>
-              {piece.content}
-            </Piece>
-          ))}
+          <Piece key={1} z={-200} cameraZ={cameraZ}>
+            <Piece1 />
+          </Piece>
+          <Piece key={2} z={-200 - 1 * spacing} cameraZ={cameraZ}>
+            <Piece2 />
+          </Piece>
+          <Piece key={3} z={-200 - 2 * spacing} cameraZ={cameraZ}>
+            <Piece3 />
+          </Piece>
+          <Piece key={4} z={-200 - 3 * spacing} cameraZ={cameraZ}>
+            <Piece4 />
+          </Piece>
+          <Piece key={5} z={piece5Z} cameraZ={cameraZ}>
+            <Piece5 orbitEnabled={isPiece5Active} />
+          </Piece>
         </div>
       </div>
     </div>

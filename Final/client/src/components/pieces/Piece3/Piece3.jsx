@@ -19,7 +19,7 @@ function SecretForm({
       encType="multipart/form-data"
     >
       <label className={styles.piece3Label}>
-        Preposition:
+        Secrets
         <select
           value={preposition}
           onChange={(e) => setPreposition(e.target.value)}
@@ -29,10 +29,11 @@ function SecretForm({
           <option value="for">for</option>
           <option value="from">from</option>
         </select>
+        &nbsp;you..
       </label>
       <input
         type="text"
-        placeholder="share your secret"
+        placeholder="?*/*^%#%$#@!$^&()(&%$@#$%^&?:"
         value={secret}
         onChange={(e) => setSecret(e.target.value)}
         required
@@ -45,7 +46,7 @@ function SecretForm({
         className={styles.piece3File}
       />
       <button type="submit" disabled={loading} className={styles.piece3Button}>
-        {loading ? "Submitting..." : "Submit"}
+        {loading ? "Submitting..." : "shh..."}
       </button>
     </form>
   );
@@ -124,19 +125,18 @@ const Piece3 = () => {
             that, the love, and the care.
           </p>
         </div>
-        <button
+        {/* <button
           onClick={() => setSubmitted(false)}
           className={styles.piece3PoemBack}
         >
           Back to form
-        </button>
+        </button> */}
       </div>
     );
   }
 
   return (
     <div className={styles.piece3Container}>
-      <h2>Share a Secret</h2>
       <SecretForm
         onSubmit={handleSubmit}
         loading={loading}
