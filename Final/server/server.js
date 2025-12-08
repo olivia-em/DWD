@@ -14,6 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+// Serve static files from React dist
+const clientDistPath = path.join(__dirname, "../Client/dist");
+app.use(express.static(clientDistPath));
+
 // Configure multer for file uploads
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -81,6 +85,11 @@ app.post("/api/secrets", upload.single("image"), (req, res) => {
     },
   ];
   res.status(201).json({ success: true });
+});
+
+// Catch-all route: serve React index.html for non-API routes
+app.get(/^\/(?!api).*/, (req, res) => {
+  res.sendFile(path.join(clientDistPath, "index.html"));
 });
 
 app.listen(PORT, () => {
